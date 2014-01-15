@@ -9,15 +9,14 @@
         data-on-type-select="addCard"
         placeholder="Insert Card"
         bs-typeahead />
-      <button
-        class="btn btn-lg"
-        data-ng-click="addCard(selectedCard);">
-        Add
-      </button>
     </div>
   </div>
   <div class="row">
     <legend>My collection</legend>
-    <div data-ng-repeat="card in collection"><img src="http://mtgimage.com/multiverseid/{{card.fields.multiverseid}}.jpg" /></div>
+    <div data-ng-repeat="card in collection">
+        <div class="card">
+            <img class="card-image" src="http://mtgimage.com/multiverseid/{{card.fields.multiverseid}}.jpg" />
+        </div>
+    </div>
   </div>
 </div>

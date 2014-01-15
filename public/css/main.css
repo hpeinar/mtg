@@ -10,3 +10,14 @@ body {
   background-repeat: no-repeat;
   background-image: url('http://mtgjson.com/images/w.png');
 }
+
+.card {
+    width: 120px;
+    height: 170px;
+    float: left;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+}
