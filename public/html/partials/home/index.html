@@ -1,0 +1,23 @@
+<div class="container" data-ng-controller="Home.IndexController">
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <input
+        type="text"
+        class="input-lg"
+        data-ng-model="selectedCard"
+        data-ng-options="card for card in getCardAutocomplete($viewValue)"
+        data-on-type-select="addCard"
+        placeholder="Insert Card"
+        bs-typeahead />
+      <button
+        class="btn btn-lg"
+        data-ng-click="addCard(selectedCard);">
+        Add
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <legend>My collection</legend>
+    <div data-ng-repeat="card in collection"><img src="http://mtgimage.com/multiverseid/{{card.fields.multiverseid}}.jpg" /></div>
+  </div>
+</div>

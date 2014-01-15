@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="MTG">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MTG - Builder</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/public/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/public/vendor/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="/public/css/main.css" rel="stylesheet">
+</head>
+
+<body data-ng-controller="MainController" data-ng-class="{errorPage: error}">
+
+    <script type="text/javascript" src="/public/vendor/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/public/vendor/jquery-ui.js"></script>
+
+    <div class="fade in" data-ui-view></div>
+
+    <script type="text/javascript" src="/public/vendor/angular/angular.js"></script>
+    <script type="text/javascript" src="/public/vendor/angular/angular-resource.js"></script>
+    <script type="text/javascript" src="/public/vendor/angular/angular-ui-router.js"></script>
+    <script type="text/javascript" src="/public/vendor/angular/angular-tokenizer.js"></script>
+    <script type="text/javascript" src="/public/vendor/angular-dragdrop.js"></script>
+    <script type="text/javascript" src="/public/vendor/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/public/js/mtg.js"></script>
+    <script type="text/javascript" src="/public/js/main.js"></script>
+    <script type="text/javascript" src="/public/js/config/routes.js"></script>
+    <script type="text/javascript" src="/public/js/controllers/main.js"></script>
+    <script type="text/javascript" src="/public/js/controllers/error.js"></script>
+    <script type="text/javascript" src="/public/js/controllers/home.js"></script>
+    <script type="text/javascript" src="/public/js/controllers/home/order.js"></script>
+    <script type="text/javascript" src="/public/js/controllers/home/list.js"></script>
+    <script type="text/javascript" src="/public/js/controllers/home/index.js"></script>
+
+    <script type="text/javascript" src="/public/vendor/angular-strap.js"></script>
+
+    <script type="text/ng-template" id="public/html/partials/error.html">
+        <div id="error">
+            <h1 class="text-center">Error</h1>
+        </div>
+    </script>
+</body>
+</html>

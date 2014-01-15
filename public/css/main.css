@@ -1,0 +1,12 @@
+body {
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.magic-white {
+  width: 12px;
+  height: 12px;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-image: url('http://mtgjson.com/images/w.png');
+}
