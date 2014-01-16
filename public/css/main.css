@@ -4,17 +4,30 @@ body {
 }
 
 .magic-white {
-  width: 12px;
-  height: 12px;
-  background-size: 12px 12px;
-  background-repeat: no-repeat;
-  background-image: url('http://mtgjson.com/images/w.png');
+    width: 12px;
+    height: 12px;
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-image: url('http://mtgjson.com/images/w.png');
+}
+
+.legend-buttons {
+    margin-bottom: 5px;
 }
 
 .card {
+    position: relative;
     width: 120px;
     height: 170px;
     float: left;
+    background-repeat: no-repeat;
+    background-size: 120px 170px;
+}
+
+.card-button-bottom {
+    position: absolute;
+    bottom: 5px;
+    width: 120px;
 }
 
 .card-image {

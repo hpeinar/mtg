@@ -1,22 +1,100 @@
 <div class="container" data-ng-controller="Home.IndexController">
-  <div class="row">
-    <div class="col-lg-4 col-lg-offset-4">
-      <input
-        type="text"
-        class="input-lg"
-        data-ng-model="selectedCard"
-        data-ng-options="card for card in getCardAutocomplete($viewValue)"
-        data-on-type-select="addCard"
-        placeholder="Insert Card"
-        bs-typeahead />
-    </div>
-  </div>
-  <div class="row">
-    <legend>My collection</legend>
-    <div data-ng-repeat="card in collection">
-        <div class="card">
-            <img class="card-image" src="http://mtgimage.com/multiverseid/{{card.fields.multiverseid}}.jpg" />
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4">
+            <input
+                type="text"
+                class="input-lg"
+                data-ng-model="selectedCard"
+                data-ng-options="card for card in getCardAutocomplete($viewValue)"
+                data-on-type-select="addCard"
+                placeholder="Insert Card"
+                bs-typeahead />
         </div>
     </div>
-  </div>
+    <div class="row">
+        <legend>
+            My collection
+            <div class="pull-right">
+                <div class="btn-group legend-buttons">
+                    <div class="btn btn-default btn-sm" data-ng-class="{active: (viewType == 'images')}" data-ng-click="viewType = 'images'">Images</div>
+                    <div class="btn btn-default btn-sm" data-ng-class="{active: (viewType == 'table')}" data-ng-click="viewType = 'table'">Table</div>
+                    <div class="btn btn-default btn-sm" data-ng-class="{active: (viewType == 'text')}" data-ng-click="viewType = 'text'">Text</div>
+                </div>
+            </div>
+        </legend>
+
+        <!-- switch views -->
+        <div data-ng-switch="viewType">
+            <!-- images view (default) -->
+            <div data-ng-switch-default="">
+                <div data-ng-repeat="card in collection">
+                    <div class="card" style="background-image: url('http://mtgimage.com/multiverseid/{{card.multiverseid}}.jpg')">
+                        <div class="card-buttons">
+                            <span class="badge">{{card.count}}</span>
+                        </div>
+                        <div class="card-button-bottom">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- table view -->
+            <div data-ng-switch-when="table">
+                <table class="table table-bordered table-hover">
+                    <tr>
+                        <td>Name</td>
+                        <td>Rarity</td>
+                        <td>Mana cost</td>
+                        <td>cmc</td>
+                        <td>Power</td>
+                        <td>Toughness</td>
+                        <td>Count</td>
+                    </tr>
+                    <tr data-ng-repeat="card in collection">
+                        <td>{{card.name}}</td>
+                        <td>{{card.rarity}}</td>
+                        <td>{{card.manaCost}}</td>
+                        <td>{{card.cmc}}</td>
+                        <td>{{card.power}}</td>
+                        <td>{{card.toughness}}</td>
+                        <td>{{card.count}}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- text view (this is used on mtgdeck building etc -->
+            <div data-ng-switch-when="text">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <legend>All</legend>
+                        <span data-ng-repeat="card in collection">{{card.count}}x <b>{{card.name}}</b><br /></span>
+                    </div>
+                    <div class="col-lg-4">
+                        <legend>Creatures</legend>
+                        <span data-ng-repeat="card in collection | typeFilter:'creature'">{{card.count}}x <b>{{card.name}}</b><br /></span>
+
+                        <br />
+                        <legend>Lands</legend>
+                        <span data-ng-repeat="card in collection | typeFilter:'land'">{{card.count}}x <b>{{card.name}}</b><br /></span>
+                    </div>
+                    <div class="col-lg-4">
+                        <legend>Instants</legend>
+                        <span data-ng-repeat="card in collection | typeFilter:'instant'">{{card.count}}x <b>{{card.name}}</b><br /></span>
+
+                        <br />
+                        <legend>Sorcery</legend>
+                        <span data-ng-repeat="card in collection | typeFilter:'sorcery'">{{card.count}}x <b>{{card.name}}</b><br /></span>
+
+                        <br />
+                        <legend>Artifact</legend>
+                        <span data-ng-repeat="card in collection | typeFilter:'artifact'">{{card.count}}x <b>{{card.name}}</b><br /></span>
+
+                        <br />
+                        <legend>Enchantment</legend>
+                        <span data-ng-repeat="card in collection | typeFilter:'enchantment'">{{card.count}}x <b>{{card.name}}</b><br /></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
