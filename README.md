@@ -5,9 +5,9 @@ mtg
 
 Idea
 ===
-Currently available deck builders are not supporting mobile and tablets. Also it is not convenient to keep track of your collection when you have 1000+ cards.
+Currently available deck builders are not supporting mobiles and tablets. Also it is not convenient to keep track of your collection when you have 1000+ cards.
 
-This solution should provide both easy collection adding (keyboard shortcuts, easy search etc) and convenient UI for both PC and mobile devices.
+This solution should provide both easy collection managment (keyboard shortcuts, easy search etc) and convenient UI for both PC and mobile devices.
 So next time you go to a draft, you can easly search what carda you have, what cards you want etc
 
 
